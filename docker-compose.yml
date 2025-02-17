@@ -11,6 +11,7 @@ services:
     networks:
       - my_network        # Using a shared network
 
+
   backend:
     build:
       context: ./backend
@@ -27,7 +28,7 @@ services:
       DB_PORT: 5432
       DB_USERNAME: username
       DB_PASSWORD: password
-      DB_NAME: Drive and deliver
+      DB_NAME: drive and deliver
     networks:
       - my_network        # Using a shared network
 
@@ -51,7 +52,7 @@ services:
       - my_network
 
   zookeeper:
-    image: wurstmeister/zookeeper:latest
+    image: wurstmeister/zookeeper:latest 
     ports:
       - "2181:2181"       # Exposing Zookeeper port 2181
     networks:
@@ -59,17 +60,17 @@ services:
 
   postgres:
     image: postgres:latest
-    container_name: my_postgres
+    container_name: my_postgres 
     restart: always
     environment:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: Drive and deliver
+      POSTGRES_DB: drive and deliver 
     ports:
       - "5432:5432"
     networks:
-      - my_network
+      - my_network 
 
 networks:
-  my_network:              # Define a shared network for inter-service communication
-    driver: bridge
+  my_network:          # Define a shared network for inter-service communication
+    driver: bridge 
