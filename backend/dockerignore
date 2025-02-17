@@ -1,0 +1,21 @@
+# Ignore node_modules to speed up builds
+node_modules
+npm-debug.log
+yarn-error.log
+dist
+
+# Ignore environment files (they should be loaded at runtime)
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignore system and editor files
+.DS_Store
+.git
+.gitignore
+.vscode
+
+# Ignore logs
+logs
+*.log

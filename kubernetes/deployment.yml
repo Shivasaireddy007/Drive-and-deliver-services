@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drive-and-deliver-services-frontend-blue
+  labels:
+    app: frontend
+    version: blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: blue
+    spec:
+      containers:
+      - name: frontend
+        image: Shivasaireddy007/drive-and-deliver-services-frontend:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drive-and-deliver-services-frontend-green
+  labels:
+    app: frontend
+    version: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+      version: green
+  template:
+    metadata:
+      labels:
+        app: frontend
+        version: green
+    spec:
+      containers:
+      - name: frontend
+        image: Shivasaireddy007/drive-and-deliver-services-frontend:latest
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+    version: blue  # Initially blue
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
