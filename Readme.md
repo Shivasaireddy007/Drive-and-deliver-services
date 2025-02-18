@@ -58,7 +58,7 @@ Excited to have you contribute to this project! Follow these simple steps to get
 
 1. **🍴 Fork the Repository**  
    - Go to the [repository page](https://github.com/Shivasaireddy007/Drive-and-deliver-services).
-   - Click the *Fork* button (top right). This creates a copy of the project in your GitHub account.
+   - Click the Fork button (top right). This creates a copy of the project in your GitHub account.
 
 2. **💻 Clone Your Fork**  
    - Once the repository is forked, clone it to your local machine. Open your terminal and run:
